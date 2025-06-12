@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Stabilizer</title>
+    <link rel="stylesheet" href="{% static 'css/result.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Video Stabilizer</h1>
+
+        <!-- Steps Bar -->
+        <div class="steps-bar">
+            <div class="step">
+                <div class="circle">1</div>
+                <div class="label">Upload</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step">
+                <div class="circle">2</div>
+                <div class="label">Process</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step active">
+                <div class="circle active-circle">3</div>
+                <div class="label active-label">Download</div>
+            </div>
+        </div>
+
+        <h2 class="complete-title">Download Complete!</h2>
+        <p class="complete-desc">Your video has been successfully stabilized and is ready for download</p>
+
+        <div class="action-buttons">
+            <a href="{{ stabilized_url }}" download class="btn btn-primary">Download Stabilized Video</a>
+            <a href="{{ side_by_side_url }}" download class="btn btn-primary">Download Side-by-Side Preview</a>
+            <a href="{% url 'upload' %}" class="btn btn-secondary">Stabilize Another Video</a>
+        </div>
+    </div>
+</body>
+</html>

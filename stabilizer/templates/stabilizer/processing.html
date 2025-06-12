@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Stabilizer</title>
+    <link rel="stylesheet" href="{% static 'css/processing.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Video Stabilizer</h1>
+
+        <!-- Steps Bar -->
+        <div class="steps-bar">
+            <div class="step">
+                <div class="circle">1</div>
+                <div class="label">Upload</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step active">
+                <div class="circle active-circle">2</div>
+                <div class="label active-label">Process</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step">
+                <div class="circle">3</div>
+                <div class="label">Download</div>
+            </div>
+        </div>
+
+        <h2 class="processing-title">Processing Video</h2>
+        <p class="processing-desc">Our AI is stabilizing your video. This may take a few minutes.</p>
+
+        <div class="progress-card">
+            <div class="progress-header">Stabilization Progress</div>
+            <div class="progress-percentage" id="progressPercent">0%</div>
+            <div class="progress-label" id="progressLabel">Processing...</div>
+            <div class="progress-bar-bg">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="success-message" id="successMsg" style="display:none;">
+                ✓ Your video has been successfully stabilized!
+            </div>
+        </div>
+
+        <button id="downloadBtn" class="download-btn" style="display:none;">
+            Download Stabilized Video
+        </button>
+    </div>
+
+    <script>
+        let percent = 0;
+        let progressBar = document.getElementById("progressBar");
+        let progressPercent = document.getElementById("progressPercent");
+        let progressLabel = document.getElementById("progressLabel");
+        let successMsg = document.getElementById("successMsg");
+        let downloadBtn = document.getElementById("downloadBtn");
+
+        let interval = setInterval(() => {
+            if (percent >= 100) {
+                clearInterval(interval);
+                progressPercent.textContent = "100%";
+                progressLabel.textContent = "Video stabilization complete!";
+                progressBar.style.width = "100%";
+                successMsg.style.display = "block";
+                downloadBtn.style.display = "inline-block";
+            } else {
+                percent++;
+                progressPercent.textContent = percent + "%";
+                progressBar.style.width = percent + "%";
+            }
+        }, 30); // ~3 seconds for demo; adjust as needed
+
+        // Redirect to /result on button click
+        downloadBtn.onclick = function() {
+            window.location.href = "/result";
+        };
+    </script>
+</body>
+</html>

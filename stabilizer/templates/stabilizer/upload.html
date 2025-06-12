@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Stabilizer</title>
+    <link rel="stylesheet" href="{% static 'css/upload.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Video Stabilizer</h1>
+
+        <div class="steps-bar">
+            <div class="step active">
+                <div class="circle">1</div>
+                <div class="label">Upload</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step">
+                <div class="circle">2</div>
+                <div class="label">Process</div>
+            </div>
+            <div class="divider"></div>
+            <div class="step">
+                <div class="circle">3</div>
+                <div class="label">Download</div>
+            </div>
+        </div>
+
+        <h2 class="upload-title">Upload Your Video</h2>
+        <p class="upload-desc">Select or drag and drop your shaky video file to get started</p>
+
+        <form id="uploadForm" action="{% url 'processing' %}" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="id_video" name="video" accept="video/*" hidden>
+                <div class="upload-icon">&#128247;</div>
+                <div class="upload-text" id="uploadText">
+                    <strong>Drop your video here, or <span class="browse" onclick="document.getElementById('id_video').click()">browse</span></strong>
+                    <div class="formats">Supports MP4, MOV, AVI and other common formats</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+                <button type="submit" class="btn btn-primary">Next: Process Video</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const uploadBox = document.getElementById('uploadBox');
+        const fileInput = document.getElementById('id_video');
+        const uploadText = document.getElementById('uploadText');
+
+        uploadBox.addEventListener('click', () => fileInput.click());
+
+        uploadBox.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadBox.classList.add('dragover');
+        });
+
+        uploadBox.addEventListener('dragleave', () => {
+            uploadBox.classList.remove('dragover');
+        });
+
+        uploadBox.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadBox.classList.remove('dragover');
+            fileInput.files = e.dataTransfer.files;
+            showSelectedFileName();
+        });
+
+        fileInput.addEventListener('change', showSelectedFileName);
+
+        function showSelectedFileName() {
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                uploadText.innerHTML = `
+                    <strong>Selected:</strong> ${fileName}
+                    <div class="formats">Supports MP4, MOV, AVI and other common formats</div>
+                `;
+                uploadBox.classList.add('selected');
+            }
+        }
+    </script>
+</body>
+</html>

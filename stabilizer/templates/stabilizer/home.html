@@ -1,0 +1,45 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Stabilizer</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Video Stabilizer</h1>
+        <h2 class="subtitle">Stabilize Your Videos</h2>
+        <p class="description">
+            Upload shaky videos and get smooth, professional results in minutes
+        </p>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-title">Upload</div>
+                <div class="step-desc">
+                    Upload your shaky video file.<br>
+                    We support most common formats.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-title">Process</div>
+                <div class="step-desc">
+                    Our AI analyzes your video and applies advanced stabilization algorithms.
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-title">Download</div>
+                <div class="step-desc">
+                    Download your stabilized video and enjoy smooth, professional footage.
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'upload' %}" class="get-started-btn">Get Started</a>
+
+    </div>
+</body>
+</html>

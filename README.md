@@ -68,6 +68,32 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 
+## 📸 App Screenshots
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <b>🏠 Homepage</b><br>
+      <img src="https://github.com/user-attachments/assets/061296e6-74dd-432f-902d-9bd176e46e1b" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <b>📤 Upload Page</b><br>
+      <img src="https://github.com/user-attachments/assets/5dfa22c4-9dd9-4ddb-8792-d9f87c749d6d" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <b>⚙️ Process Page</b><br>
+      <img src="https://github.com/user-attachments/assets/0141e432-a5be-4d4a-9c62-f36f90c6fc2e" width="100%">
+    </td>
+    <td width="50%" align="center">
+      <b>⬇️ Download Page</b><br>
+      <img src="https://github.com/user-attachments/assets/f0c96fcb-575c-44e7-8642-bb2c675fcbfa" width="100%">
+    </td>
+  </tr>
+</table>
+
+
 
 
 

@@ -24,15 +24,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-673hepbi#qxa!&rymxue(+$0-fj%=$w6_^xl8rbu=&zlp3e5ir'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['https://videostabilizer-webapp-project.onrender.com/']
+ALLOWED_HOSTS =[]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

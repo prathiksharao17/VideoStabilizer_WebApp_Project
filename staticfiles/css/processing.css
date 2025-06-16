@@ -1,0 +1,154 @@
+body {
+    background: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 24px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.steps-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f2f4f8;
+    color: #18202b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    border: 2px solid #f2f4f8;
+}
+
+.active-circle {
+    background: #18202b !important;
+    color: #fff !important;
+    border: 2px solid #18202b !important;
+}
+
+.label {
+    font-size: 1rem;
+    color: #18202b;
+    opacity: 0.8;
+}
+
+.active-label {
+    font-weight: 600;
+    color: #18202b;
+    opacity: 1;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: #ececec;
+    margin: 0 14px;
+    align-self: center;
+}
+
+.processing-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.processing-desc {
+    color: #5a5a5a;
+    margin-bottom: 28px;
+}
+
+.progress-card {
+    background: #fff;
+    border: 1.5px solid #ececec;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 32px 24px;
+    margin: 0 auto 32px auto;
+    max-width: 420px;
+}
+
+.progress-header {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.progress-percentage {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #18202b;
+    margin-bottom: 6px;
+}
+
+.progress-label {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 18px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 10px;
+    background: #ececec;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background: #18202b;
+    border-radius: 8px;
+    transition: width 0.2s;
+}
+
+.success-message {
+    color: #1ca64c;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+.download-btn {
+    background: #18202b;
+    color: #fff;
+    padding: 14px 40px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: background 0.2s;
+}
+
+.download-btn:hover {
+    background: #0d1117;
+}

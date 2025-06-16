@@ -1,0 +1,157 @@
+body {
+    background: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 24px;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.steps-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f2f4f8;
+    color: #18202b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    border: 2px solid #f2f4f8;
+    transition: background 0.2s, border 0.2s;
+}
+
+.step.active .circle {
+    background: #18202b;
+    color: #fff;
+    border: 2px solid #18202b;
+}
+
+.label {
+    font-size: 1rem;
+    color: #18202b;
+    opacity: 0.8;
+}
+
+.divider {
+    width: 60px;
+    height: 2px;
+    background: #ececec;
+    margin: 0 14px;
+    align-self: center;
+}
+
+.upload-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 24px;
+}
+
+.upload-desc {
+    color: #5a5a5a;
+    margin-bottom: 28px;
+}
+
+.upload-box {
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    padding: 40px 20px;
+    background: #f9fafb;
+    cursor: pointer;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color 0.2s;
+}
+
+.upload-box.dragover {
+    border-color: #18202b;
+    background: #f3f4f6;
+}
+
+.upload-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+    color: #b2bac6;
+}
+
+.upload-text {
+    font-size: 1.1rem;
+    color: #18202b;
+}
+
+.browse {
+    color: #18202b;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.formats {
+    color: #7a7a7a;
+    font-size: 0.95rem;
+    margin-top: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-primary {
+    background: #18202b;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0d1117;
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #18202b;
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background: #f6f8fa;
+}

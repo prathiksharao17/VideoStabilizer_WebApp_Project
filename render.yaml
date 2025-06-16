@@ -3,7 +3,8 @@ services:
     name: video-stabilizer
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn Video_Stabilizer_Web.wsgi:application
+    startCommand: gunicorn video_stabilizer.wsgi
+
     envVars:
       - key: DJANGO_SECRET_KEY
         value: prathiksharao
